@@ -23,11 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function openMenu(e) {
         overylay.classList.add('active');
         menu.classList.add('active');
+        document.body.style.overflow = "hidden";
     };
 
     function closeMenu(e) {
         overylay.classList.remove('active');
         menu.classList.remove('active');
+        document.body.style.overflow = "auto";
     };
 
     openMenuBtn.addEventListener('click', openMenu);
