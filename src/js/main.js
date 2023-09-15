@@ -19,6 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     })
+    accordeonDropdown.addEventListener('click', linksHandler);
+
+    function linksHandler(e) {
+        console.log(e.target, document.querySelectorAll('.menu__list-link'))
+        document.querySelectorAll('.menu__dropdown-link').forEach(element => {
+            if (e.target === element) {
+                closeMenu();
+            }
+        });
+
+    }
 
     function openMenu(e) {
         overylay.classList.add('active');
