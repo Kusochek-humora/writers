@@ -669,6 +669,14 @@
             position: static;
             max-width: 100%;
         }
+        &__title {
+            font-size: 48px;
+            margin-bottom: 0;
+        }
+        &__subtitle {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
     }
     .time {
         .section__right {
@@ -698,9 +706,60 @@
         }
     }
     .creation {
+        .section__cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px 0;
+        }
+        .section__card {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 4px 34px 0px rgba(148, 148, 148, 0.3);
+            border: none !important;
+            flex-direction: column;
+            &-caption {
+                min-height: auto;
+            }
+        }
+        .section__card-wrapper {
+            width: 100%;
+            height: 314px;
+            margin-bottom: 20px;
+        }
+        .section__card-links {
+            flex-direction: column;
+        }
+        .section__card-link {
+            width: 100%;
+            max-width: 100%;
+        }
         .section__card-date {
             position: static;
             font-size: 24px;
+            color: $black;
+            transform: none;
+        }
+    }
+    .awards {
+        .section__left-box {
+            .section__left-wrapper {
+                height: 416px;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    .family {
+        .section__right--row p {
+            width: 100%;
+            max-width: 100%;
+            order: 1;
+        }
+        .section__figure {
+            order: 0;
+        }
+        .section__left-box {
+            order: 2;
         }
     }
 }
@@ -764,6 +823,139 @@
     }
 }
 @media screen and (max-width: 499px) {
+    .biography {
+        margin-top: 45px;
+        .section__right {
+            gap: 0;
+        }
+
+        .section__right--text p:last-child {
+            margin-top: 20px;
+        }
+        .section__left-box {
+            margin-top: 20px;
+            p {
+                padding: 15px 20px;
+                background-color: $white;
+                box-shadow: 0px 4px 34px 0px rgba(148, 148, 148, 0.3);
+            }
+        }
+    }
+    .time {
+        .section__right {
+            gap: 0;
+        }
+        .section__text-box {
+            gap: 0;
+        }
+        .section__date--simple {
+            margin-bottom: 10px !important;
+        }
+        .section__left-box {
+            width: 100% !important;
+            box-shadow: 0px 4px 34px 0px rgba(148, 148, 148, 0.3);
+            padding: 15px 20px;
+        }
+    }
+    .live {
+        .section__figure {
+            margin-top: 20px;
+        }
+    }
+    .activity {
+        .section__left-box {
+            order: 3;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 4px 34px 0px rgba(148, 148, 148, 0.3);
+            padding: 15px 20px;
+        }
+    }
+    .creation {
+        .section__card-caption {
+            margin-bottom: 20px;
+        }
+        .section__card-notice {
+            margin-bottom: 20px;
+        }
+        .section__card-date {
+            margin-bottom: 20px;
+        }
+        .section__card-title {
+            margin-bottom: 10px;
+        }
+        .section__card-info {
+            gap: 0;
+        }
+    }
+    .awards {
+        .section__left-box {
+            margin-top: 20px;
+        }
+        .section__subtitle,
+        .section__subtitle--border {
+            margin-bottom: 30px;
+            padding: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .family {
+        margin-bottom: 50px;
+        .section__left-box {
+            .section__left-caption {
+                margin-bottom: 0;
+            }
+            padding: 15px 20px;
+            box-shadow: 0px 4px 34px 0px rgba(148, 148, 148, 0.3);
+        }
+        .section__figure {
+            margin-bottom: 20px;
+        }
+        .section__figure-wrapper {
+            height: 225.185px;
+        }
+        .section__right {
+            p {
+                margin-bottom: 20px;
+            }
+        }
+        .section__subtitle,
+        .section__subtitle--border {
+            margin-bottom: 30px;
+            padding: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .section__right {
+        gap: 0;
+    }
+    .section__figure-wrapper {
+        height: 147px;
+    }
+    .section__date {
+        margin-bottom: 30px;
+        max-width: max-content;
+        color: $white;
+        padding: 0 17px;
+        background-color: $black;
+        &::after {
+            display: none;
+        }
+    }
+    .section__title {
+        padding: 10px 15px;
+        background-color: $black;
+        color: $white;
+        margin: 0 -15px;
+        font-size: 36px;
+        margin-bottom: 52px;
+    }
+    .section__subtitle {
+        font-size: 32px;
+    }
     .promo {
         background-image: url(../images/promo-__bg-sm.jpg);
         &__date {
@@ -798,6 +990,13 @@
         &__mouse {
             display: none;
         }
+    }
+    .section__date--simple {
+        background-color: $white;
+        color: $black;
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 }
 // @import "media";
