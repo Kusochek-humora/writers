@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.menu__dropdown-link').forEach(element => {
             if (e.target === element) {
                 closeMenu();
+                accordeonDropdown.removeAttribute('style');
+                accordeonBtn.classList.remove('active');
             }
         });
 
