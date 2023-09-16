@@ -1,4 +1,3 @@
-
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import csso from 'gulp-csso';
@@ -18,10 +17,12 @@ import uglify from 'gulp-uglify';
 
 export const buildHtml = () => {
 	return gulp.src([
-		'src/**/*.html'
-	])
+			'src/**/*.html'
+		])
 		.pipe(plumber())
-		.pipe(ssi({ root: './src' }))
+		.pipe(ssi({
+			root: './src'
+		}))
 		.pipe(gulp.dest('dist'))
 		.pipe(sync.stream());
 };
@@ -30,8 +31,9 @@ export const buildHtml = () => {
 
 export const buildJs = (done) => {
 	gulp.src([
-		'src/js/vendor/*.js'
-	])
+			'src/js/vendor/*.js',
+			'node_modules/swiper/swiper-bundle.js'
+		])
 		.pipe(plumber())
 		.pipe(uglify())
 		.pipe(concat('vendor.min.js'))
@@ -50,6 +52,19 @@ export const buildJs = (done) => {
 		.pipe(concat('main.min.js'))
 		.pipe(gulp.dest('dist/js'))
 		.pipe(sync.stream());
+		
+	gulp.src('src/js/sliders.js')
+		.pipe(plumber())
+		.pipe(rigger())
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
+		.pipe(sourcemaps.init())
+		.pipe(uglify())
+		.pipe(sourcemaps.write())
+		.pipe(concat('sliders.min.js'))
+		.pipe(gulp.dest('dist/js'))
+		.pipe(sync.stream());
 
 	done();
 };
@@ -58,8 +73,9 @@ export const buildJs = (done) => {
 
 export const buildCss = (done) => {
 	gulp.src([
-		'node_modules/normalize.css/normalize.css',
-	])
+			'node_modules/normalize.css/normalize.css',
+			'node_modules/swiper/swiper-bundle.css',
+		])
 		.pipe(prefixer())
 		.pipe(csso())
 		.pipe(concat('vendor.min.css'))

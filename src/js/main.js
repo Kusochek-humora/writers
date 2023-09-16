@@ -1,5 +1,7 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', function () {
+
+    
     const menu = document.querySelector('#menu'),
         openMenuBtn = document.querySelector('#open-menu'),
         closeMenuBtn = document.querySelector('#close-menu'),
