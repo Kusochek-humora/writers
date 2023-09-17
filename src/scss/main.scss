@@ -170,7 +170,9 @@
         left: 0;
     }
 }
-//
+
+
+// menu open kogda najimaew na burger
 .menu {
     width: 491px;
     position: absolute;
@@ -303,7 +305,10 @@
     // &__socials-link {
     // }
 }
+// menu open kogda najimaew na burger
 
+
+// modificators -> main.html
 .section {
     position: relative;
     &::after {
@@ -645,6 +650,10 @@
         }
     }
 }
+// modificators -> main.html
+
+
+
 
 .footer {
     margin-top: 103px;
@@ -761,6 +770,8 @@
         }
     }
 }
+
+// corousel -> creation.html
 .creation-main {
     .swiper-wrapper {
         box-sizing: border-box !important;
@@ -913,9 +924,11 @@
     .swiper {
     }
 }
-.container {
-}
+// corousel -> creation.html
 
+
+
+// tabs -> read.html
 .read {
     &__container {
         display: flex;
@@ -982,7 +995,7 @@
         &::after {
             transition: 0.3s opacity;
             content: "";
-       
+
             position: absolute;
             bottom: 20px;
             left: 50%;
@@ -1025,7 +1038,7 @@
         position: relative;
         z-index: 1;
         &::before {
-         content: "" attr(data-first-spell) "";
+            content: "" attr(data-first-spell) "";
             position: absolute;
             font-size: 150px;
             color: rgba(236, 236, 236, 1);
@@ -1108,6 +1121,8 @@
         padding-right: 19px;
     }
 }
+// tabs -> read.html
+
 
 @media screen and (max-width: 1024px) {
     .header {

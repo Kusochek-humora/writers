@@ -1,0 +1,192 @@
+.read {
+    &__container {
+        display: flex;
+        gap: 0 20px;
+    }
+
+    &__authors {
+        max-width: 278px;
+        width: 100%;
+        // padding: 52px 10px;
+        // padding: 0 10px;
+        background-color: $black;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $black;
+            width: 100%;
+            height: 52px;
+        }
+    }
+
+    &__list {
+        padding: 52px 0;
+        max-height: 778px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        // gap: 18px 0;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 7px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #747474;
+            border-radius: 18px;
+            width: 7px;
+        }
+    }
+
+    &__list-item {
+        // height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__list-btn {
+        padding-bottom: 38px;
+        // text-align: center;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $white;
+
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        &::after {
+            transition: 0.3s opacity;
+            content: "";
+       
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url(../images/border__read.svg);
+            width: 215px;
+            height: 11px;
+            opacity: 0;
+        }
+        &.active {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    &__content {
+        max-width: 872px;
+        width: 100%;
+        height: 777px;
+        background-color: $white;
+        padding: 20px 4px 20px 36px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $white;
+            width: 100%;
+            height: 36px;
+        }
+    }
+    &__content-author {
+        text-align: center;
+        color: $black;
+        font-size: 64px;
+        margin-top: 40px;
+        padding-bottom: 47px;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+        &::before {
+         content: "" attr(data-first-spell) "";
+            position: absolute;
+            font-size: 150px;
+            color: rgba(236, 236, 236, 1);
+            z-index: -1;
+            top: -59px;
+            left: 50%;
+            transform: translateX(-50%);
+            // background-size: cover;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 20px;
+            background-image: url(../images/border__read-bg.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    &__content-tab {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        animation: fadeIn 0.5s ease forwards;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                visibility: visible;
+                display: block !important;
+            }
+        }
+
+        &.active {
+            animation:
+                // fadeOut 0.5s ease forwards,
+                fadeIn 0.5s ease forwards;
+            display: block;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                visibility: visible;
+                display: block;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+            }
+        }
+        max-height: 500px;
+        height: 100%;
+        padding-bottom: 30px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 7px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #ececec;
+            border-radius: 18px;
+            width: 7px;
+        }
+    }
+
+    &__content-tab-title {
+        // text-transform: lowercase;
+        text-align: center;
+        font-size: 24px;
+        color: $black;
+        margin-bottom: 35px;
+    }
+
+    &__content-tab-text {
+        padding-right: 19px;
+    }
+}
