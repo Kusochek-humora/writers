@@ -3,7 +3,8 @@
 const swiper = new Swiper('.swiper', {
     speed: 400,
     spaceBetween: 20,
-    slidesPerView: 1.5,
+    slidesPerView: 3,
+    Infinity: false,
 
     navigation: {
         nextEl: '.next',

@@ -52,7 +52,7 @@ export const buildJs = (done) => {
 		.pipe(concat('main.min.js'))
 		.pipe(gulp.dest('dist/js'))
 		.pipe(sync.stream());
-		
+
 	gulp.src('src/js/sliders.js')
 		.pipe(plumber())
 		.pipe(rigger())
@@ -66,6 +66,18 @@ export const buildJs = (done) => {
 		.pipe(gulp.dest('dist/js'))
 		.pipe(sync.stream());
 
+	gulp.src('src/js/tabs.js')
+		.pipe(plumber())
+		.pipe(rigger())
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
+		.pipe(sourcemaps.init())
+		.pipe(uglify())
+		.pipe(sourcemaps.write())
+		.pipe(concat('tabs.min.js'))
+		.pipe(gulp.dest('dist/js'))
+		.pipe(sync.stream());
 	done();
 };
 
